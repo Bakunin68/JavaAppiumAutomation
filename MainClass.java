@@ -1,20 +1,22 @@
 import org.junit.jupiter.api.Test;
 
 public class MainClass {
-    public int getLocalNumber() {
-        return 14;
+    private int class_number = 20;
+
+    public int getClassNumber() {
+        return class_number;
     }
 }
 
 class MainClassTest {
     @Test
-    public void testGetLocalNumber() {
+    public void testGetClassNumber() {
         MainClass mainClass = new MainClass();
-        int result = mainClass.getLocalNumber();
-        if(result != 14) {
-            System.out.println("Test failed");
-        } else {
+        int result = mainClass.getClassNumber();
+        if(result > 45) {
             System.out.println("Test passed");
+        } else {
+            System.out.println("Test failed");
         }
     }
 
