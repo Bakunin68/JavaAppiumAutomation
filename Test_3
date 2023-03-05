@@ -1,0 +1,23 @@
+import org.junit.jupiter.api.Test;
+
+public class MainClass {
+    private String class_string = "Hello, world";
+
+    public String getClassString() {
+        return class_string;
+    }
+}
+
+class MainClassTest {
+
+    @Test
+    public void testGetClassString() {
+        MainClass mainClass = new MainClass();
+        String classString = mainClass.getClassString();
+        if (classString.contains("hello") || classString.contains("Hello")) {
+            System.out.println("Test passed");
+        } else {
+            System.out.println("Test failed");
+        }
+    }
+}
