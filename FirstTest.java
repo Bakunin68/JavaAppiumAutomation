@@ -8,29 +8,27 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.URL;
 
 public class FirstTest {
-
     private AppiumDriver driver;
-
     @Before
     public void setUp() throws Exception
     {
         DesiredCapabilities capabilities = new DesiredCapabilities();
+
         capabilities.setCapability("platformName","Android");
         capabilities.setCapability("deviceName","AndroidTestDevice");
-        capabilities.setCapability("platformVersion","8.0.0");
+        capabilities.setCapability("platformVersion","8.0");
         capabilities.setCapability("automationName","Appium");
         capabilities.setCapability("appPackage","org.wikipedia");
         capabilities.setCapability("appActivity",".main.MainActivity");
         capabilities.setCapability("app","/Users/macbook/Desktop/JavaAppiumAutomation/JavaAppiumAutomation/apks/org.wikipedia.apk");
 
-        driver = new AndroidDriver(new URL("http://127.0.0.1:4724/wd/hub"), capabilities);
-
+        driver = new AndroidDriver(new URL("http://0.0.0.0:4724/wd/hub"), capabilities);
     }
 
     @After
     public void tearDown()
     {
-        driver. quit();
+        driver.quit();
     }
 
     @Test
