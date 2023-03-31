@@ -3,18 +3,18 @@ import io.appium.java_client.android.AndroidDriver;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.URL;
 
 public class FirstTest {
+
     private AppiumDriver driver;
+
     @Before
     public void setUp() throws Exception
     {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-
         capabilities.setCapability("platformName","Android");
         capabilities.setCapability("deviceName","AndroidTestDevice");
         capabilities.setCapability("platformVersion","8.0");
@@ -23,7 +23,7 @@ public class FirstTest {
         capabilities.setCapability("appActivity",".main.MainActivity");
         capabilities.setCapability("app","/Users/macbook/Desktop/JavaAppiumAutomation/JavaAppiumAutomation/apks/org.wikipedia.apk");
 
-        driver = new AndroidDriver(new URL("http://0.0.0.0:4724/wd/hub"), capabilities);
+        driver = new AndroidDriver(new URL("http://127.0.0.1:4724/wd/hub"),capabilities);
     }
 
     @After
@@ -35,8 +35,7 @@ public class FirstTest {
     @Test
     public void firstTest()
     {
-        WebElement element = driver.findElementById("org.wikipedia:id/fragment_feed_header");
-        element.click();
- //       System.out.println("First test run");
+        System.out.println("First test run");
     }
+
 }
